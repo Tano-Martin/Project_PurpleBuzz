@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-uwu_4wv^b)i1c%1(afnrx)h+uy-=ja*du23$!rf(wl^4+$za27
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['purplebuzz.herokuapp.com']
-
+ALLOWED_HOSTS = ['*']
+#purplebuzz.herokuapp.com
 
 # Application definition
 
