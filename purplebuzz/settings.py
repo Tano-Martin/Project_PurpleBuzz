@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 	# add application
 	'tinymce',
+    'website.apps.WebsiteConfig',
+    'service.apps.ServiceConfig',
 ]
 
 MIDDLEWARE = [
@@ -88,7 +90,7 @@ WSGI_APPLICATION = 'purplebuzz.wsgi.application'
 		#'HOST': '',
 		#'PORT': 5432,
 #	}
-#}
+#}postgres://qrdabivtmtsods:f88684d7fd33b4e1d95be1a0c0c693e0d5faa1e2d8bb9da822e33c6d5ed79641@ec2-54-152-185-191.compute-1.amazonaws.com:5432/dvgen3t0iet30
 
 # configuration database sqlite3
 DATABASES = {
