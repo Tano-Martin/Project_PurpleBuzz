@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.fields import URLField
+from tinymce.models import HTMLField
 
 # Create your models here.
 class Service(models.Model):
@@ -107,6 +109,8 @@ class Categorywork(models.Model):
 class Work(models.Model):
 	title = models.CharField(max_length=255)
 	description = models.TextField()
+	document = HTMLField(blank=True)
+	video = models.URLField(blank=True)
 	picture = models.FileField(upload_to="work_file")
 	pictureAdd = models.ManyToManyField('service.Picturework', related_name='picture_work', blank=True)
 	category = models.ForeignKey('service.Categorywork', related_name='category_work', on_delete=models.CASCADE)

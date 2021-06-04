@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-uwu_4wv^b)i1c%1(afnrx)h+uy-=ja*du23$!rf(wl^4+$za27'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 #purplebuzz.herokuapp.com
@@ -81,24 +81,24 @@ WSGI_APPLICATION = 'purplebuzz.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # configuration database postgresql
-#DATABASES = {
-	#'default': {
-		#'ENGINE': 'django.db.backends.postgresql',
-		#'NAME': '',
-		#'USER': '',
-		#'PASSWORD': '',
-		#'HOST': '',
-		#'PORT': 5432,
-#	}
-#}postgres://qrdabivtmtsods:f88684d7fd33b4e1d95be1a0c0c693e0d5faa1e2d8bb9da822e33c6d5ed79641@ec2-54-152-185-191.compute-1.amazonaws.com:5432/dvgen3t0iet30
+DATABASES = {
+	'default': {
+		'ENGINE': 'django.db.backends.postgresql',
+		'NAME': 'dvgen3t0iet30',
+		'USER': 'qrdabivtmtsods',
+		'PASSWORD': 'f88684d7fd33b4e1d95be1a0c0c693e0d5faa1e2d8bb9da822e33c6d5ed79641',
+		'HOST': 'ec2-54-152-185-191.compute-1.amazonaws.com',
+		'PORT': 5432,
+	}
+}
 
 # configuration database sqlite3
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
