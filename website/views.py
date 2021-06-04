@@ -48,7 +48,7 @@ def workSingle(request, id_work):
     website = models.Website.objects.filter(status=True).first
     socialicons = models.Socialicon.objects.filter(status=True)
     work = models_service.Work.objects.get(id=id_work)
-    workpictures = models_service.Work.objects.filter(status=True)
+    workrecents = models_service.Work.objects.filter(status=True).order_by('-date_add')[:3]
     return render(request, "work-single.html", locals())
 
 def newsletterForm(request):
