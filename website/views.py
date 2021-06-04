@@ -40,7 +40,7 @@ def work(request):
     website = models.Website.objects.filter(status=True).first
     socialicons = models.Socialicon.objects.filter(status=True)
     works = models_service.Work.objects.filter(status=True)
-    news = models_service.Work.objects.order_by('-date_add')[:4]
+    news = models_service.Workfeatured.objects.order_by('-date_add')[:4]
     categoryworks = models_service.Categorywork.objects.filter(status=True)
     return render(request, "work.html", locals())
 

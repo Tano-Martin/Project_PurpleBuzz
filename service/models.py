@@ -112,7 +112,6 @@ class Work(models.Model):
 	document = HTMLField(blank=True)
 	video = models.URLField(blank=True)
 	picture = models.FileField(upload_to="work_file")
-	pictureAdd = models.ManyToManyField('service.Picturework', related_name='picture_work', blank=True)
 	category = models.ForeignKey('service.Categorywork', related_name='category_work', on_delete=models.CASCADE)
 	date_add = models.DateTimeField(auto_now_add=True)
 	date_update = models.DateTimeField(auto_now=True)
@@ -127,6 +126,7 @@ class Work(models.Model):
 
 class Picturework(models.Model):
 	picture = models.FileField(upload_to='Picturework_file')
+	work = models.ForeignKey('service.Work', related_name='picture_work', on_delete=models.CASCADE)
 	date_add = models.DateTimeField(auto_now_add=True)
 	date_update = models.DateTimeField(auto_now=True)
 	status = models.BooleanField(default=True)
@@ -138,3 +138,16 @@ class Picturework(models.Model):
 	def __str__(self):
 		return f'{self.picture}'
 
+class Workfeatured(models.Model):
+	title = models.CharField(max_length=255)
+	picture = models.FileField(upload_to='Workfeatured_file')
+	date_add = models.DateTimeField(auto_now_add=True)
+	date_update = models.DateTimeField(auto_now=True)
+	status = models.BooleanField(default=True)
+
+	class Meta():
+		verbose_name = 'Workfeatured'
+		verbose_name_plural = 'Workfeatureds'
+
+	def __str__(self):
+		return self.title

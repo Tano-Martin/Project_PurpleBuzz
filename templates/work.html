@@ -32,11 +32,11 @@
         <div class="row projects gx-lg-5 mb-3">
             {% for work in works %}
                 <a href="{% url 'workSingle' work.id %}" class="col-sm-6 col-lg-4 text-decoration-none project {{ work.category }}">
-                    <div class="service-work overflow-hidden card my-3 mx-5 mx-sm-0">
+                    <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
                         <img class="card-img-top" src="{{ work.picture.url }}" alt="{{ work.title }}">
                         <div class="card-body">
                             <h5 class="card-title light-300 text-dark">{{ work.title }}</h5>
-                            <p class="card-text light-300 text-dark">{{ work.description }}</p>
+                            <p class="card-text light-300 text-dark">{{ work.description|truncatewords:"15" }}</p>
                             <span class="text-decoration-none text-primary light-300">
                                 Read more <i class='bx bxs-hand-right ms-1'></i>
                             </span>
